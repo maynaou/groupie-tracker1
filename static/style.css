@@ -1,0 +1,129 @@
+/* Global Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f8fc;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 32px;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Artist Container */
+.artist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.artist {
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artist img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.artist img:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.artist a:hover {
+    color: #3498db;
+}
+
+/* Details Section */
+.details {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.details h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: none;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #34495e;
+    color: #ecf0f1;
+    font-weight: 600;
+}
+
+td {
+    background-color: #f9fafb;
+    color: #2c3e50;
+}
+
+tr:nth-child(even) td {
+    background-color: #ecf0f1;
+}
+
+/* Header Style */
+.header {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Artist.Name}} - Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Artist Information Table -->
+    <div class="header">Artist Information</div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Creation Date</th>
+            <th>First Album</th>
+            <th>Members</th>
+        </tr>
+        <tr>
+            <td>{{.Artist.ID}}</td>
+            <td>{{.Artist.Name}}</td>
+            <td>{{.Artist.CreationDate}}</td>
+            <td>{{.Artist.FirstAlbum}}</td>
+            <td>
+                {{range .Artist.Members}}
+                    {{.}}<br>
+                {{end}}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Tour Locations & Dates Table -->
+    <div class="header">Tour Locations & Dates</div>
+    <table>
+        <tr>
+            <th>Location</th>
+            <th>Dates</th>
+        </tr>
+        {{range $location, $dates := .Relations.DatesLocations}}
+        <tr>
+            <td>{{$location}}</td>
+            <td>
+                {{range $dates}}
+                    {{.}}<br>
+                {{end}}
+            </td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>
+
+
+
