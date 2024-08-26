@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -30,7 +31,6 @@ var (
 	ApiObject []API
 )
 
-
 func detailsHandler(w http.ResponseWriter, r *http.Request) {
 	idStr := r.URL.Query().Get("id")
 	id, err := strconv.Atoi(idStr)
@@ -40,11 +40,13 @@ func detailsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	artist := ApiObject[id-1]
+	fmt.Println(artist)
 	resp, err := http.Get(artist.Relations)
 	if err != nil {
 		http.Error(w, "Error fetching relations", http.StatusInternalServerError)
 		return
 	}
+
 	defer resp.Body.Close()
 
 	var relations Relation
